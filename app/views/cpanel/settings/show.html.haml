@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @cpanel_setting.name
+%p
+  %b Value:
+  = @cpanel_setting.value
+%p
+  %b Description:
+  = @cpanel_setting.description
+
+= link_to 'Edit', edit_cpanel_setting_path(@cpanel_setting)
+\|
+= link_to 'Back', cpanel_settings_path

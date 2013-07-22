@@ -1,0 +1,27 @@
+%h1 Listing cpanel_nodes
+
+%table
+  %tr
+    %th Name
+    %th Sort
+    %th Description
+    %th Section
+    %th Cnt
+    %th
+    %th
+    %th
+
+  - @cpanel_nodes.each do |cpanel_node|
+    %tr
+      %td= cpanel_node.name
+      %td= cpanel_node.sort
+      %td= cpanel_node.description
+      %td= cpanel_node.section_id
+      %td= cpanel_node.cnt
+      %td= link_to 'Show', cpanel_node
+      %td= link_to 'Edit', edit_cpanel_node_path(cpanel_node)
+      %td= link_to 'Destroy', cpanel_node, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Node', new_cpanel_node_path

@@ -1,0 +1,26 @@
+%ul.breadcrumb
+  %li
+    %a{:href => "/capnel"} 后台
+    %span.divider /
+  %li.active 设置
+
+%table.table.table-condensed.table-bordered.table-hover
+  %tr
+    %th Name
+    %th Value
+    %th Description
+    %th
+
+  - @cpanel_settings.each do |cpanel_setting|
+    %tr
+      %td= cpanel_setting.name
+      %td= cpanel_setting.value
+      %td= cpanel_setting.description
+      %td
+        &nbsp;
+        = link_to '<i class="icon-pencil"></i>'.html_safe, edit_cpanel_setting_path(cpanel_setting)
+        &nbsp;
+        = link_to '<i class="icon-remove"></i>'.html_safe, cpanel_setting, :method => :delete, :data => { :confirm => '确定删除?' }
+%br
+
+%a.btn.btn-success.btn-mini{:href => new_cpanel_setting_path} 新增

@@ -1,0 +1,21 @@
+%h1 Listing cpanel_sections
+
+%table
+  %tr
+    %th Name
+    %th Sort
+    %th
+    %th
+    %th
+
+  - @cpanel_sections.each do |cpanel_section|
+    %tr
+      %td= cpanel_section.name
+      %td= cpanel_section.sort
+      %td= link_to 'Show', cpanel_section
+      %td= link_to 'Edit', edit_cpanel_section_path(cpanel_section)
+      %td= link_to 'Destroy', cpanel_section, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Section', new_cpanel_section_path

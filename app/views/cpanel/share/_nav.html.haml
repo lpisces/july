@@ -1,0 +1,11 @@
+.navbar
+  .navbar-inner
+    %a.brand{:href => "/"} App
+    %ul.nav
+      - Settings.nav.items.each do |i|
+        - if i.controller ==  self.controller_name.to_s
+          %li.active
+            %a{:href => i.link, :style => 'padding:5px;'}= i.cname
+        - else
+          %li
+            %a{:href => i.link, :style => 'padding:5px;'}= i.cname

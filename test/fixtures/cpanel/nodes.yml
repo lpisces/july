@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  sort: 1
+  description: MyString
+  section_id: 1
+  cnt: 1
+
+two:
+  name: MyString
+  sort: 1
+  description: MyString
+  section_id: 1
+  cnt: 1

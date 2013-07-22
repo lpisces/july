@@ -1,0 +1,29 @@
+%ul.breadcrumb
+  %li
+    %a{:href => "/capnel"} 后台
+    %span.divider /
+  %li.active 用户
+
+%table.table.table-condensed.table-bordered.table-hover
+  %tr
+    %th Name
+    %th Nick
+    %th Email
+    %th Mobile
+    %th Avatar
+    %th
+
+  - @cpanel_users.each do |cpanel_user|
+    %tr
+      %td= cpanel_user.name
+      %td= cpanel_user.nick
+      %td= cpanel_user.email
+      %td= cpanel_user.mobile
+      %td= cpanel_user.avatar
+      %td
+        = link_to '<i class="icon-pencil"></i>'.html_safe, edit_cpanel_user_path(cpanel_user)
+        = link_to '<i class="icon-remove"></i>'.html_safe, cpanel_user, :method => :delete, :data => { :confirm => '你确定吗?' }
+
+%br
+
+%a.btn.btn-success.btn-mini{:href => new_cpanel_user_path} 新增

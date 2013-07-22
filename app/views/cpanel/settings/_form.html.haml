@@ -1,0 +1,19 @@
+= form_for @cpanel_setting do |f|
+  - if @cpanel_setting.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@cpanel_setting.errors.count, "error")} prohibited this cpanel_setting from being saved:"
+      %ul
+        - @cpanel_setting.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :value
+    = f.text_field :value
+  .field
+    = f.label :description
+    = f.text_field :description
+  .actions
+    = f.submit 'Save'

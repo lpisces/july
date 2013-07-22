@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @cpanel_section.name
+%p
+  %b Sort:
+  = @cpanel_section.sort
+
+= link_to 'Edit', edit_cpanel_section_path(@cpanel_section)
+\|
+= link_to 'Back', cpanel_sections_path

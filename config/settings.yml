@@ -1,0 +1,9 @@
+site:
+  name: 'app'
+  domain: 'app.com'
+
+nav:
+  items: [
+    {cname: '设置', controller: 'settings', link: '/cpanel/settings'}, 
+    {cname: '用户', controller: 'users', link: '/cpanel/users'},
+  ]

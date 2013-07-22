@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @cpanel_user.name
+%p
+  %b Nick:
+  = @cpanel_user.nick
+%p
+  %b Email:
+  = @cpanel_user.email
+%p
+  %b Mobile:
+  = @cpanel_user.mobile
+%p
+  %b Avatar:
+  = @cpanel_user.avatar
+
+= link_to 'Edit', edit_cpanel_user_path(@cpanel_user)
+\|
+= link_to 'Back', cpanel_users_path

@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @cpanel_node.name
+%p
+  %b Sort:
+  = @cpanel_node.sort
+%p
+  %b Description:
+  = @cpanel_node.description
+%p
+  %b Section:
+  = @cpanel_node.section_id
+%p
+  %b Cnt:
+  = @cpanel_node.cnt
+
+= link_to 'Edit', edit_cpanel_node_path(@cpanel_node)
+\|
+= link_to 'Back', cpanel_nodes_path

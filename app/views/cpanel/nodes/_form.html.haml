@@ -1,0 +1,25 @@
+= form_for @cpanel_node do |f|
+  - if @cpanel_node.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@cpanel_node.errors.count, "error")} prohibited this cpanel_node from being saved:"
+      %ul
+        - @cpanel_node.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :sort
+    = f.number_field :sort
+  .field
+    = f.label :description
+    = f.text_field :description
+  .field
+    = f.label :section_id
+    = f.number_field :section_id
+  .field
+    = f.label :cnt
+    = f.number_field :cnt
+  .actions
+    = f.submit 'Save'
